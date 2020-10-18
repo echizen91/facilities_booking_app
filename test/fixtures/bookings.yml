@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  users: one
+  rooms: one
+  startdate: 2020-10-18 18:56:30
+  enddate: 2020-10-18 18:56:30
+
+two:
+  users: two
+  rooms: two
+  startdate: 2020-10-18 18:56:30
+  enddate: 2020-10-18 18:56:30
