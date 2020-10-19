@@ -36,3 +36,33 @@ Migration of models to sqlitedb schema:
 ``` 
 rails db:migrate 
 ```
+
+# Schema
+Rooms:
+* Location
+* Capacity
+* Classification
+* Primary ID referenced by Booking model
+
+Users:
+* Name
+* Department
+* Primary ID referenced by Booking model
+
+Bookings:
+* Reference ID from User
+* Reference ID from Room
+* Start Date
+* End Date
+
+# Validations
+- [x] Booking start date cannot be earlier than current time
+- [x] Booking end date must be at least 30mins from start date
+- [x] New Booking date and time cannot overlap with existing bookings
+- [] User cannot make multiple overlapping room bookings
+- [] Admin rights for creating new room/user
+
+# Improvements
+- [] Implementing a rudimentary 
+- [] Converting to login basis, so new booking can be directly referenced rather than dropdown list
+- [] User Interface
