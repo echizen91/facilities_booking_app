@@ -63,6 +63,5 @@ Bookings:
 - [ ] Admin rights for creating new room/user
 
 # Improvements
-- [ ] Implementing a rudimentary 
 - [ ] Converting to login basis, so new booking can be directly referenced rather than dropdown list
 - [ ] User Interface
