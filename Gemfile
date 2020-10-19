@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'chartkick'
 # gem 'apexcharts'
 
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3', '~> 1.4'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -37,7 +39,7 @@ group :development, :test do
 end
 
 group :production do
-  gem "pg"
+  gem 'pg'
 end
 
 group :development do
@@ -47,8 +49,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.4'
 end
 
 group :test do
