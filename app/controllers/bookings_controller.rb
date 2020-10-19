@@ -17,6 +17,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  # GET /bookings/available
+  def available
+    timestart = Time.new - 60
+    timeend = Time.new + (86400*12) + 60
+    @booked = Booking.where('(startdate BETWEEN ? AND ?) OR (enddate BETWEEN ? AND ?)', timestart, timeend, timestart, timeend)
+  end
+
   # GET /bookings/1/edit
   def edit
   end
