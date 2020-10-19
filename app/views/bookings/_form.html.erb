@@ -12,13 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :users_id %>
-    <%= form.text_field :users_id %>
+    <%= form.label :user_id %>
+    <% options = options_from_collection_for_select(User.all, 'id', 'name') %>  
+    <%= form.select :user_id, options %>
   </div>
 
   <div class="field">
-    <%= form.label :rooms_id %>
-    <%= form.text_field :rooms_id %>
+    <%= form.label :room_id %>
+    <% options = options_from_collection_for_select(Room.all, 'id', 'location') %>
+    <%= form.select :room_id, options %>
   </div>
 
   <div class="field">

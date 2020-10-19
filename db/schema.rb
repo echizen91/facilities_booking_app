@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(version: 2020_10_18_105630) do
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "users_id", null: false
-    t.integer "rooms_id", null: false
+    t.integer "user_id"
+    t.integer "room_id"
     t.datetime "startdate"
     t.datetime "enddate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["rooms_id"], name: "index_bookings_on_rooms_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["room_id"], name: "index_bookings_on_room_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -38,6 +38,4 @@ ActiveRecord::Schema.define(version: 2020_10_18_105630) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "bookings", "rooms", column: "rooms_id"
-  add_foreign_key "bookings", "users", column: "users_id"
 end

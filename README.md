@@ -1,5 +1,3 @@
-# README
-
 # Initializing of Project
 Creating the app:
 
