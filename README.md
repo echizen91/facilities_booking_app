@@ -60,7 +60,7 @@ Bookings:
 - [x] Booking end date must be at least 30mins from start date
 - [x] New Booking date and time cannot overlap with existing bookings
 - [x] User cannot make multiple overlapping room bookings
-- [ ] Admin rights for creating new room/user
+- [x] Admin rights for creating new room/user (Rudimentary)
 
 # Improvements
 - [ ] Users are able to check availability
