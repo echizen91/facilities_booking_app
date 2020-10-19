@@ -6,9 +6,18 @@ class MoreThanValidator < ActiveModel::Validator
     if record.enddate <= record.startdate + 1740 
       record.errors[:base] << "Time end cannot be earlier than or equal to current time or lesser than 30mins of booking"
     end
-    @overlap = Booking.where('room_id = ? AND NOT (startdate BETWEEN ? AND ?) AND NOT (enddate BETWEEN ? AND ?)', record.room_id, record.startdate, record.enddate, record.startdate, record.enddate)
+
+    # Resolution is 1min
+    start = record.startdate - 60
+    final = record.enddate + 60
+
+    @overlap = Booking.where('room_id = ? AND (startdate BETWEEN ? AND ?) AND (enddate BETWEEN ? AND ?)', record.room_id, start, final, start, final)
     unless @overlap.empty?
       record.errors[:base] << "Room is unavailable at this time and day"
+    end
+    @overlapuser = Booking.where('user_id = ? AND (startdate BETWEEN ? AND ?) AND (enddate BETWEEN ? AND ?)', record.user_id, start, final, start, final)
+    unless @overlapuser.empty?
+      record.errors[:base] << "User has another booking at this time and day"
     end
   end
 end
