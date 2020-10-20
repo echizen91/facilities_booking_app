@@ -63,6 +63,6 @@ Bookings:
 - [x] Admin rights for creating new room/user (Rudimentary)
 
 # Improvements
-- [ ] Users are able to check availability
+- [x] Users are able to check availability (Could be improved)
 - [ ] Converting to login basis, so new booking can be directly referenced rather than dropdown list
 - [ ] User Interface
