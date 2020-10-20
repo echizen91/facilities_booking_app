@@ -3,13 +3,22 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+import "bootstrap"
+import "../stylesheets/application"
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
+// For charts
 require("chartkick")
 require("chart.js")
-// require("Chart.bundle")
+
+// For bootstrap
+// require("jquery3")
+// require("popper")
+// require("bootstrap-sprockets")
 
 
 

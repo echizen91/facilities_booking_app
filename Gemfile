@@ -21,8 +21,13 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# For charts
 gem 'chartkick'
-# gem 'apexcharts'
+
+# For bootstrap
+gem 'bootstrap', '~> 4.5.2'
+gem 'jquery-rails'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -25,14 +25,15 @@
     padding: 8px;
   }
   
-  #green-table tr:nth-child(even){background-color: #f2f2f2;}
+  #green-table tr:nth-child(odd){background-color: #073f50;}
+  #green-table tr:nth-child(even){background-color: #2cb0d8;}
   
-  #green-table tr:hover {background-color: #ddd;}
+  #green-table tr:hover {background-color: rgb(128, 2, 2);}
   
   #green-table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #2cb0d8;
     color: white;
   }
