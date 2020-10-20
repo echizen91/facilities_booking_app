@@ -65,4 +65,4 @@ Bookings:
 # Improvements
 - [x] Users are able to check availability (Could be improved)
 - [ ] Converting to login basis, so new booking can be directly referenced rather than dropdown list
-- [ ] User Interface
+- [x] User Interface
