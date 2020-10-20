@@ -27,6 +27,8 @@ gem 'chartkick'
 # For bootstrap
 gem 'bootstrap', '~> 4.5.2'
 gem 'jquery-rails'
+gem "bootstrap_form", "~> 4.5.0"
+
 
 
 # Use Active Storage variant

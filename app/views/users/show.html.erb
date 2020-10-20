@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong>Department:</strong>
-  <%= @user.department %>
-</p>
+<div class="jumbotron jumbotron-form text-align-left">
+  <div class="row">
+    <div class="col-sm-3">
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <div class="col-sm-3">
+      <strong>Department:</strong>
+      <%= @user.department %>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-sm btn-primary text-dark"%>
+<%= link_to 'Back', users_path, class: "btn btn-sm btn-primary text-dark"%>

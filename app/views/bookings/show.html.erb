@@ -1,39 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Booking Name:</strong>
-  <%= @booking.user.name %>
-</p>
+<div class="jumbotron jumbotron-form text-align-left">
+  <div class="row">
+    <div class="col-sm-3">
+      <strong>Booking Name:</strong>
+      <%= @booking.user.name %>
+    </div>
 
-<p>
-  <strong>User Department:</strong>
-  <%= @booking.user.department %>
-</p>
+    <div class="col-sm-2">
+      <strong>User Department:</strong>
+      <%= @booking.user.department %>
+    </div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @booking.room.location %>
-</p>
+    <div class="col-sm-2">
+      <strong>Location:</strong>
+      <%= @booking.room.location %>
+    </div>
 
-<p>
-  <strong>Capacity:</strong>
-  <%= @booking.room.capacity %>
-</p>
+    <div class="col-sm-2">
+      <strong>Capacity:</strong>
+      <%= @booking.room.capacity %>
+    </div>
 
-<p>
-  <strong>Classification:</strong>
-  <%= @booking.room.classification %>
-</p>
+    <div class="col-sm-3">
+      <strong>Classification:</strong>
+      <%= @booking.room.classification %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <strong>Startdate:</strong>
+      <%= @booking.startdate %>
+    </div>
 
-<p>
-  <strong>Startdate:</strong>
-  <%= @booking.startdate %>
-</p>
+    <div class="col-sm-3">
+      <strong>Enddate:</strong>
+      <%= @booking.enddate %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Enddate:</strong>
-  <%= @booking.enddate %>
-</p>
-
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+<%= link_to 'Edit', edit_booking_path(@booking), class: "btn btn-sm btn-primary text-dark" %> 
+<%= link_to 'Back', bookings_path, class: "btn btn-sm btn-primary text-dark" %>
