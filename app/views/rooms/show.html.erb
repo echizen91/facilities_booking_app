@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
+<div class="jumbotron jumbotron-form text-align-left">
+  <div class="row">
+    <div class="col-sm-3">
+      <strong>Location:</strong>
+      <%= @room.location %>
+    </div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @room.location %>
-</p>
+    <div class="col-sm-3">
+      <strong>Capacity:</strong>
+      <%= @room.capacity %>
+    </div>
 
-<p>
-  <strong>Capacity:</strong>
-  <%= @room.capacity %>
-</p>
+    <div class="col-sm-3">
+      <strong>Classification:</strong>
+      <%= @room.classification %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Classification:</strong>
-  <%= @room.classification %>
-</p>
-
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to 'Edit', edit_room_path(@room), class: "btn btn-sm btn-primary text-dark" %>
+<%= link_to 'Back', rooms_path, class: "btn btn-sm btn-primary text-dark" %>

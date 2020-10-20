@@ -11,22 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
+  <div class="jumbotron jumbotron-form text-align-left">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :location %>
+          <%= form.text_field :location , { class: "form-control" } %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :capacity %>
-    <%= form.text_field :capacity %>
-  </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :capacity %>
+          <%= form.text_field :capacity, { class: "form-control" }%>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :classification %>
-    <%= form.select :classification, ["unclassified","restricted","classified"]%>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :classification %>
+          <%= form.select :classification, ["unclassified","restricted","classified"], {}, {required: 'true', autofocus: 'true', class: 'form-control'}%>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-sm btn-primary text-dark" %>
   </div>
 <% end %>

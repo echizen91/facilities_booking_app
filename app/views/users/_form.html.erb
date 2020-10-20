@@ -10,18 +10,24 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :department %>
-    <%= form.text_field :department %>
+  <div class="jumbotron jumbotron-form text-align-left">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name , { class: "form-control" }%>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :department %>
+          <%= form.text_field :department , { class: "form-control" }%>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-sm btn-primary text-dark" %>
   </div>
 <% end %>

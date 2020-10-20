@@ -1,8 +1,8 @@
-<h1>New Booking</h1>
+<div class="jumbotron">
+    <h1>New Booking</h1>
+</div>
 <%= render 'form', booking: @booking %>
-<%= link_to 'Back', bookings_path %>
+<%= link_to 'Back', bookings_path, class: "btn btn-sm btn-primary text-dark" %>
+<br>
 <br>
 <%= render 'available', datatoday: @datatoday, datatomorrow: @datatomorrow %>
-
-
-

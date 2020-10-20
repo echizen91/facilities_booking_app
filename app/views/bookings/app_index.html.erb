@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Facility Booking Application</h1>
+<div class="jumbotron">
+    <h1>Facility Booking Application</h1>
+</div>
 <br>
-<%= link_to("Book a room", { controller: "bookings", action: "index" }) %>
+<%= link_to("Book a room", { controller: "bookings", action: "index" }, class: "btn btn-sm btn-primary text-dark") %>
 <br>
-<%= link_to("Create a room [ Only for admins ]", { controller: "rooms", action: "index" }) %>
+<%= link_to("Create a room [ Only for admins ]", { controller: "rooms", action: "index" }, class: "btn btn-sm btn-primary text-dark") %>
 <br>
-<%= link_to("Create a user [ Only for admins ]", { controller: "users", action: "index" }) %>
+<%= link_to("Create a user [ Only for admins ]", { controller: "users", action: "index" }, class: "btn btn-sm btn-primary text-dark") %>

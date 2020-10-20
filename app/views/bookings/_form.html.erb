@@ -10,30 +10,41 @@
       </ul>
     </div>
   <% end %>
+  <br>
+  <div class="jumbotron jumbotron-form text-align-left">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          <%= form.label :user_id %>
+          <% options = options_from_collection_for_select(User.all, 'id', 'name') %>  
+          <%= form.select :user_id, options, {}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+        </div>
+      </div>
+      
+      <div class="col-sm-3">
+        <div class="form-group">
+          <%= form.label :room_id %>
+          <% options = options_from_collection_for_select(Room.all, 'id', 'location') %>
+          <%= form.select :room_id, options, {}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <% options = options_from_collection_for_select(User.all, 'id', 'name') %>  
-    <%= form.select :user_id, options %>
+      <div class="col-sm-3">
+        <div class="form-group">
+          <%= form.label :startdate %>
+          <%= form.datetime_select :startdate, { order:[:day,:month,:year] }, { class: "form-control" } %>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="form-group">
+          <%= form.label :enddate %>
+          <%= form.datetime_select :enddate, { order:[:day,:month,:year], default: 30.minutes.from_now }, { class: "form-control" } %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :room_id %>
-    <% options = options_from_collection_for_select(Room.all, 'id', 'location') %>
-    <%= form.select :room_id, options %>
-  </div>
-
-  <div class="field">
-    <%= form.label :startdate %>
-    <%= form.datetime_select :startdate, order:[:day,:month,:year] %>
-  </div>
-
-  <div class="field">
-    <%= form.label :enddate %>
-    <%= form.datetime_select :enddate, order:[:day,:month,:year], default: 30.minutes.from_now %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-sm btn-primary text-dark" %>
   </div>
 <% end %>

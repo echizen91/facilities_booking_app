@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rooms</h1>
+<div class="jumbotron">
+  <h1>Rooms</h1>
+</div>
 
-<table id="green-table">
+<table class="table table-hover table-dark">
   <thead>
     <tr>
       <th>Location</th>
@@ -18,9 +20,9 @@
         <td><%= room.location %></td>
         <td><%= room.capacity %></td>
         <td><%= room.classification %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', room, class:"btn text-secondary btn-sm btn-primary"%></td>
+        <td><%= link_to 'Edit', edit_room_path(room), class:"btn text-secondary btn-sm btn-primary" %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn text-secondary btn-sm btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,6 +30,6 @@
 
 <br>
 
-<%= link_to 'New Room', new_room_path %>
+<%= link_to 'New Room', new_room_path, class:"btn text-secondary btn-sm btn-primary"%>
 <br>
-<%= link_to("Back to main", { controller: "bookings", action: "app_index" }) %>
+<%= link_to("Back to main", { controller: "bookings", action: "app_index" }, class:"btn text-secondary btn-sm btn-primary") %>
