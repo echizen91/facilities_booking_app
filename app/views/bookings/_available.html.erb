@@ -1,0 +1,4 @@
+<h2> Bookings from <%= @today %> to <%= @tomorrow %> </h2>
+<%= timeline @datatoday, height: "200px"%>
+<h2> Bookings from <%= @tomorrow %> to <%= @twodayslater %> </h2>
+<%= timeline @datatomorrow, height: "200px" %>
