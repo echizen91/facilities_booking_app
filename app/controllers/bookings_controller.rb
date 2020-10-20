@@ -15,13 +15,30 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Booking.new
-  end
 
-  # GET /bookings/available
-  def available
-    timestart = Time.new - 60
-    timeend = Time.new + (86400*12) + 60
-    @booked = Booking.where('(startdate BETWEEN ? AND ?) OR (enddate BETWEEN ? AND ?)', timestart, timeend, timestart, timeend)
+    @today = Date.today
+    @tomorrow = Date.today + 1
+    @twodayslater = Date.today + 2
+    booked = Booking.joins(:room).where('(startdate BETWEEN ? AND ?) OR (enddate BETWEEN ? AND ?)', @today, @tomorrow, @today, @tomorrow).order('rooms.location')
+    booked_tomorrow = Booking.joins(:room).where('(startdate BETWEEN ? AND ?) OR (enddate BETWEEN ? AND ?)', @tomorrow, @twodayslater, @tomorrow, @twodayslater).order('rooms.location')
+
+    @datatoday = []
+    booked.each do |booking|
+      b = [booking.room.location, booking.startdate, booking.enddate]
+      @datatoday.push(b)
+    end
+    
+    @datatomorrow = []
+    booked_tomorrow.each do |booking|
+      b = [booking.room.location, booking.startdate, booking.enddate]
+      @datatomorrow.push(b)
+    end
+    if @datatoday.empty? 
+      @datatoday.push([])
+    end
+    if @datatomorrow.empty? 
+      @datatomorrow.push(["No Bookings Yet", Date.today, Date.today])
+    end
   end
 
   # GET /bookings/1/edit
