@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
       @datatomorrow.push(b)
     end
     if @datatoday.empty? 
-      @datatoday.push([])
+      @datatoday.push(["No Bookings Yet", Date.today, Date.today])
     end
     if @datatomorrow.empty? 
       @datatomorrow.push(["No Bookings Yet", Date.today, Date.today])
