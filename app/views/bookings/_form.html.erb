@@ -1,8 +1,7 @@
 <%= form_with(model: booking, local: true) do |form| %>
   <% if booking.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
-
+    <div class="alert alert-danger" role="alert">
+      <h4><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h4>
       <ul>
         <% booking.errors.full_messages.each do |message| %>
           <li><%= message %></li>
