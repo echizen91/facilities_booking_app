@@ -25,12 +25,12 @@
 
   <div class="field">
     <%= form.label :startdate %>
-    <%= form.datetime_select :startdate %>
+    <%= form.datetime_select :startdate, order:[:day,:month,:year] %>
   </div>
 
   <div class="field">
     <%= form.label :enddate %>
-    <%= form.datetime_select :enddate %>
+    <%= form.datetime_select :enddate, order:[:day,:month,:year], default: 30.minutes.from_now %>
   </div>
 
   <div class="actions">
