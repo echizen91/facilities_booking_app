@@ -11,11 +11,16 @@ class MoreThanValidator < ActiveModel::Validator
     start = record.startdate - 60
     final = record.enddate + 60
 
-    @overlap = Booking.where('room_id = ? AND (startdate BETWEEN ? AND ?) AND (enddate BETWEEN ? AND ?)', record.room_id, start, final, start, final)
+    # If current room booking exists startdate that is within the input startdate and end date within startdate
+
+    # if current booking start date and enddate coincides with any booking within the day, reject
+    # if any start date coincides with any booking within the day but end date outside, reject
+    # if any end date conincides with any booking within the day but start date outside, reject
+    @overlap = Booking.where('room_id = ? AND (startdate BETWEEN ? AND ?) OR (enddate BETWEEN ? AND ?)', record.room_id, start, final, start, final)
     unless @overlap.empty?
       record.errors[:base] << "Room is unavailable at this time and day"
     end
-    @overlapuser = Booking.where('user_id = ? AND (startdate BETWEEN ? AND ?) AND (enddate BETWEEN ? AND ?)', record.user_id, start, final, start, final)
+    @overlapuser = Booking.where('user_id = ? AND (startdate BETWEEN ? AND ?) OR (enddate BETWEEN ? AND ?)', record.user_id, start, final, start, final)
     unless @overlapuser.empty?
       record.errors[:base] << "User has another booking at this time and day"
     end
